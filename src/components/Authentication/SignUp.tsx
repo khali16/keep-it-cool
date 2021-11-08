@@ -9,8 +9,10 @@ import {
 } from "@material-ui/core";
 import { useFormik } from "formik";
 import { signUpSchema } from "../../Validation/ValidationSchemas";
+import { useAuth } from "../../Firebase/auth-context";
 
 export default function SignUp() {
+  const { signUp } = useAuth();
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -20,6 +22,7 @@ export default function SignUp() {
     validationSchema: signUpSchema,
     onSubmit: (values) => {
       console.log(values);
+      signUp(values.firstName, values.email, values.password);
     },
   });
 
