@@ -4,8 +4,8 @@
 .cupStage3,
 .cupStage4,
 .cupStage5 {
+  margin-top: 50%;
   margin-left: 50%;
-  margin-top: 10%;
   transform: translate(-50%, -50%);
   width: 150px;
   height: 180px;
@@ -39,7 +39,7 @@
 .cupStage4,
 .cupStage5 {
   animation-fill-mode: forwards;
-  background-image: url(../../Images/water.png);
+  background-image: url(../../../Images/water.png);
   background-repeat: no-repeat;
 }
 
@@ -118,7 +118,8 @@
 }
 
 .increaseButton {
-  width: 300px;
+  width: 250px;
   height: 50px;
   margin: auto;
+  margin-top: 0%;
 }
