@@ -1,0 +1,125 @@
+.cupStage0,
+.cupStage1,
+.cupStage2,
+.cupStage3,
+.cupStage4,
+.cupStage5 {
+  margin-top: 50%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 180px;
+  border: 6px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 0 0 6px #666666, 0 10px 25px rgba(0, 0, 0, 1);
+}
+
+.cupStage1 {
+  animation: firstAnimation 3s linear;
+}
+.cupStage2 {
+  animation: secondAnimation 3s linear;
+}
+.cupStage3 {
+  animation: thirdAnimation 2s linear;
+}
+.cupStage4 {
+  animation: fourthAnimation 2s linear;
+}
+.cupStage5 {
+  animation: fifthAnimation 2s linear;
+}
+
+.cupStage1,
+.cupStage2,
+.cupStage3,
+.cupStage4,
+.cupStage5 {
+  animation-fill-mode: forwards;
+  background-image: url(../../../Images/water.png);
+  background-repeat: no-repeat;
+}
+
+.cupStage0:before,
+.cupStage1:before,
+.cupStage2:before,
+.cupStage3:before,
+.cupStage4:before,
+.cupStage5:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 80px;
+  border: 6px solid #666666;
+  right: -68px;
+  top: 30px;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+
+@keyframes firstAnimation {
+  0% {
+    background-position: 0 160px;
+  }
+  50% {
+    background-position: 0 130px;
+  }
+  100% {
+    background-position: 0 100px;
+  }
+}
+
+@keyframes secondAnimation {
+  0% {
+    background-position: 0 100px;
+  }
+  50% {
+    background-position: 0 80px;
+  }
+  100% {
+    background-position: 0 60px;
+  }
+}
+@keyframes thirdAnimation {
+  0% {
+    background-position: 0 60px;
+  }
+  50% {
+    background-position: 0 50px;
+  }
+  100% {
+    background-position: 0 40px;
+  }
+}
+@keyframes fourthAnimation {
+  0% {
+    background-position: 0 40px;
+  }
+  50% {
+    background-position: 0 30px;
+  }
+  100% {
+    background-position: 0 20px;
+  }
+}
+@keyframes fifthAnimation {
+  0% {
+    background-position: 0 20px;
+  }
+  50% {
+    background-position: 0 10px;
+  }
+  100% {
+    background-position: 0 00px;
+  }
+}
+
+.increaseButton {
+  width: 250px;
+  height: 50px;
+  margin: auto;
+  margin-top: 0%;
+}

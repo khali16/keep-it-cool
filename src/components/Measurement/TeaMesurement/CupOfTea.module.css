@@ -1,0 +1,104 @@
+.cupStage0,
+.cupStage1,
+.cupStage2,
+.cupStage3,
+.cupStage4 {
+  margin-left: 40%;
+  margin-top: 49%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 180px;
+  border: 6px solid white;
+  border-radius: 60px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 0 0 6px #666666, 0 10px 25px rgba(0, 0, 0, 1);
+}
+
+.cupStage0:before,
+.cupStage1:before,
+.cupStage2:before,
+.cupStage3:before,
+.cupStage4:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  left: 156px;
+  height: 80px;
+  border: 6px solid #666666;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+
+.cupStage1 {
+  animation: firstFill 2s linear;
+}
+.cupStage2 {
+  animation: secondFill 2s linear;
+}
+.cupStage3 {
+  animation: thirdFill 2s linear;
+}
+.cupStage4 {
+  animation: fourthFill 2s linear;
+}
+
+.cupStage1,
+.cupStage2,
+.cupStage3,
+.cupStage4 {
+  animation-fill-mode: forwards;
+  background: url("../../../Images/tea.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@keyframes firstFill {
+  0% {
+    background-position: 0px 180px;
+  }
+  50% {
+    background-position: 0px 140px;
+  }
+  100% {
+    background-position: 0px 120px;
+  }
+}
+@keyframes secondFill {
+  0% {
+    background-position: 0px 120px;
+  }
+  50% {
+    background-position: 0px 100px;
+  }
+  100% {
+    background-position: 0px 80px;
+  }
+}
+@keyframes thirdFill {
+  0% {
+    background-position: 0px 80px;
+  }
+  50% {
+    background-position: 0px 60px;
+  }
+  100% {
+    background-position: 0px 40px;
+  }
+}
+@keyframes fourthFill {
+  0% {
+    background-position: 0px 40px;
+  }
+  50% {
+    background-position: 0px 20px;
+  }
+  100% {
+    background-position: 0px 00px;
+  }
+}
+
+.container {
+  width: 250px;
+  height: 50px;
+  margin: auto;
+}
