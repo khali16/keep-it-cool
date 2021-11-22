@@ -3,16 +3,15 @@ import styles from "./CupOfCoffee.module.css";
 import FluidIncreaseButton from "../FluidIncreaseButton";
 
 const CupOfCoffee = () => {
-  const coffeeFluidCounter = useCounter(0);
+  const { fluidCounter, increaseFluidCounterHandler } = useCounter(0);
 
-  const cupStage =
-    styles["cupStage".concat(coffeeFluidCounter.fluidCounter.toString())];
+  const cupStage = styles["cupStage".concat(fluidCounter.toString())];
   return (
     <>
       <div className={cupStage}></div>
       <FluidIncreaseButton
-        increaseFluidLevel={coffeeFluidCounter.increaseFluidCounterHandler}
-        fluidCounter={coffeeFluidCounter.fluidCounter}
+        increaseFluidLevel={increaseFluidCounterHandler}
+        fluidCounter={fluidCounter}
         fluidType="Coffee"
         maxCups={3}
       />

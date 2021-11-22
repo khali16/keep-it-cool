@@ -1,27 +1,28 @@
-import React from "react";
-import "./App.css";
+import styles from "./App.module.css";
+import LogInWrapper from "./components/Authentication/LogInWrapper";
+import SignUpWrapper from "./components/Authentication/SignUpWrapper";
 import BeerMeasurement from "./components/Measurement/BeerMeasurement/BeerMeasurement";
 import CupOfCoffee from "./components/Measurement/CoffeeMeasurement/CupOfCoffee";
 import CupOfTea from "./components/Measurement/TeaMesurement/CupOfTea";
 import CupOfWater from "./components/Measurement/WaterMeasurement/CupOfWater";
 
-function App() {
+const App = () => {
   return (
-    <div style={{ display: "grid" }}>
-      <div style={{ gridColumn: "1", gridRow: "1" }}>
+    <div className={styles.container}>
+      <div className={styles.firstCup}>
         <CupOfWater />
       </div>
-      <div style={{ gridColumn: "2", gridRow: "1" }}>
+      <div className={styles.secondCup}>
         <CupOfCoffee />
       </div>
-      <div style={{ gridColumn: "3", gridRow: "1" }}>
+      <div className={styles.thirdCup}>
         <CupOfTea />
       </div>
-      <div style={{ gridColumn: "4", gridRow: "1" }}>
+      <div className={styles.fourthCup}>
         <BeerMeasurement />
       </div>
     </div>
   );
-}
+};
 
 export default App;

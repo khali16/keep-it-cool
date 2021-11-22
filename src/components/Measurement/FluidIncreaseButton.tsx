@@ -1,5 +1,7 @@
 import React from "react";
 import { Button, Box } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import { updateMeasurement } from "../../store/express-slice";
 
 interface Props {
   increaseFluidLevel: () => void;
@@ -14,6 +16,19 @@ const FluidIncreaseButton: React.FC<Props> = ({
   fluidType,
   maxCups,
 }) => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    increaseFluidLevel();
+    const dzien = new Date().toDateString();
+    const measurement = {
+      date: dzien,
+      fluid: fluidType,
+      cups: fluidCounter + 1,
+    };
+    dispatch(updateMeasurement(measurement));
+  };
+
   return (
     <Box
       style={{
@@ -24,7 +39,7 @@ const FluidIncreaseButton: React.FC<Props> = ({
       }}
     >
       <Button
-        onClick={increaseFluidLevel}
+        onClick={handleSubmit}
         disabled={isCupFull(fluidCounter, maxCups)}
         variant="outlined"
       >

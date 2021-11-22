@@ -3,17 +3,16 @@ import styles from "./BeerMeasurement.module.css";
 import FluidIncreaseButton from "../FluidIncreaseButton";
 
 const BeerMeasurement = () => {
-  const beerFluidCounter = useCounter(0);
+  const { fluidCounter, increaseFluidCounterHandler } = useCounter(0);
 
-  const glassStage =
-    styles["glassStage".concat(beerFluidCounter.fluidCounter.toString())];
+  const glassStage = styles["glassStage".concat(fluidCounter.toString())];
 
   return (
     <>
       <div className={glassStage} />
       <FluidIncreaseButton
-        increaseFluidLevel={beerFluidCounter.increaseFluidCounterHandler}
-        fluidCounter={beerFluidCounter.fluidCounter}
+        increaseFluidLevel={increaseFluidCounterHandler}
+        fluidCounter={fluidCounter}
         fluidType="Beer"
         maxCups={2}
       />
