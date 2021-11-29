@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Box } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { updateMeasurement } from "../../store/express-slice";
+import { fetchMeasurement } from "../../store/express-slice";
 
 interface Props {
   increaseFluidLevel: () => void;
@@ -18,6 +19,10 @@ const FluidIncreaseButton: React.FC<Props> = ({
 }) => {
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(fetchMeasurement());
+  }, []);
+
   const handleSubmit = () => {
     increaseFluidLevel();
     const dzien = new Date().toDateString();
@@ -27,6 +32,7 @@ const FluidIncreaseButton: React.FC<Props> = ({
       cups: fluidCounter + 1,
     };
     dispatch(updateMeasurement(measurement));
+    dispatch(fetchMeasurement());
   };
 
   return (

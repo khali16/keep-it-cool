@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BeerMeasurement from "./BeerMeasurement/BeerMeasurement";
 import CupOfCoffee from "./CoffeeMeasurement/CupOfCoffee";
 import CupOfTea from "./TeaMesurement/CupOfTea";
 import CupOfWater from "./WaterMeasurement/CupOfWater";
 import styles from "./AllMeasurementsLayout.module.css";
+import { useDispatch } from "react-redux";
+import { fetchMeasurement, updateMeasurement } from "../../store/express-slice";
+import useCounter from "../../hooks/useCounter";
 
-const AllMeasurementsLayout = () => {
+const AllMeasurementsPanel = () => {
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(fetchMeasurement());
+  // }, [updateMeasurement]);
   return (
     <div className={styles.measurementsContainer}>
       <div className={styles.firstCup}>
@@ -24,4 +31,4 @@ const AllMeasurementsLayout = () => {
   );
 };
 
-export default AllMeasurementsLayout;
+export default AllMeasurementsPanel;

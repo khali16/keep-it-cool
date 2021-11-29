@@ -6,11 +6,11 @@ import {
   Button,
   Link,
 } from "@material-ui/core";
-import AuthenticationTitleForm from "./AuthenticationTitleForm";
-import FormRedirector from "./FormRedirector";
+import AuthenticationTitleForm from "../AuthenticationTitleForm";
+import FormRedirector from "../FormRedirector";
 import LoginForm from "./LoginForm";
 
-const LogInWrapper = () => {
+const LogInPanel = () => {
   return (
     <Container component="main" maxWidth="md">
       <Box
@@ -33,4 +33,4 @@ const LogInWrapper = () => {
   );
 };
 
-export default LogInWrapper;
+export default LogInPanel;

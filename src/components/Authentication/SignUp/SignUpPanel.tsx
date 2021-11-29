@@ -7,11 +7,11 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import AuthenticationTitleForm from "./AuthenticationTitleForm";
-import FormRedirector from "./FormRedirector";
+import AuthenticationTitleForm from "../AuthenticationTitleForm";
+import FormRedirector from "../FormRedirector";
 import SignUpForm from "./SignUpForm";
 
-const SignUpWrapper = () => {
+const SignUpPanel = () => {
   return (
     <Container component="main" maxWidth="md">
       <Box
@@ -34,4 +34,4 @@ const SignUpWrapper = () => {
   );
 };
 
-export default SignUpWrapper;
+export default SignUpPanel;

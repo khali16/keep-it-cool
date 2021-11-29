@@ -1,5 +1,5 @@
-import AllMeasurementsLayout from "./components/Measurement/AllMeasurementsLayout";
+import AllMeasurementsPanel from "./components/Measurement/AllMeasurementsPanel";
 
-const App = () => <AllMeasurementsLayout />;
+const App = () => <AllMeasurementsPanel />;
 
 export default App;

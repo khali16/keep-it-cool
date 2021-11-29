@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid, TextField, Button } from "@material-ui/core";
 import { useFormik } from "formik";
-import { signUpSchema } from "../../Validation/ValidationSchemas";
-import { useAuth } from "../../Firebase/auth-context";
+import { signUpSchema } from "../../../Validation/ValidationSchemas";
+import { useAuth } from "../../../Firebase/auth-context";
 
 const SignUpForm = () => {
   const { signUp } = useAuth();
