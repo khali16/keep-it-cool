@@ -1,10 +1,11 @@
-import {
-  createAsyncThunk,
-  createSlice,
-  PayloadAction,
-  current,
-} from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+
+interface NewMeasurement {
+  date: string;
+  fluid: string;
+  cups: number;
+}
 
 const fetchMeasurement = createAsyncThunk("fetch", async () => {
   const request = await axios.get("/api").then((response) => {
@@ -12,12 +13,6 @@ const fetchMeasurement = createAsyncThunk("fetch", async () => {
   });
   return request;
 });
-
-interface NewMeasurement {
-  date: string;
-  fluid: string;
-  cups: number;
-}
 //TODO why is awaity hewre?
 const updateMeasurement = createAsyncThunk(
   "postReq",
@@ -28,7 +23,7 @@ const updateMeasurement = createAsyncThunk(
 
 const slice = createSlice({
   name: "expressSlice",
-  initialState: { drinks: [] as any },
+  initialState: { drinks: [] },
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchMeasurement.fulfilled, (state, action: any) => {
