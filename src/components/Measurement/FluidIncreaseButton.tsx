@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import { Button, Box } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import { updateMeasurement } from "../../store/express-slice";
 import { fetchMeasurement } from "../../store/express-slice";
+import { NewMeasurement } from "../../models/MeasurementModel";
+import useMeasurementSubmit from "../../hooks/useMeasurementSubmit";
 
-interface Props {
-  increaseFluidLevel: () => void;
-  fluidCounter: number;
-  fluidType: string;
+interface Props extends NewMeasurement {
   maxCups: number;
 }
 
@@ -23,17 +21,11 @@ const FluidIncreaseButton: React.FC<Props> = ({
     dispatch(fetchMeasurement());
   }, []);
 
-  const handleSubmit = () => {
-    increaseFluidLevel();
-    const dzien = new Date().toDateString();
-    const measurement = {
-      date: dzien,
-      fluid: fluidType,
-      cups: fluidCounter + 1,
-    };
-    dispatch(updateMeasurement(measurement));
-    dispatch(fetchMeasurement());
-  };
+  const { handleSubmitHandler } = useMeasurementSubmit({
+    increaseFluidLevel,
+    fluidCounter,
+    fluidType,
+  });
 
   return (
     <Box
@@ -45,7 +37,7 @@ const FluidIncreaseButton: React.FC<Props> = ({
       }}
     >
       <Button
-        onClick={handleSubmit}
+        onClick={handleSubmitHandler}
         disabled={isCupFull(fluidCounter, maxCups)}
         variant="outlined"
       >
