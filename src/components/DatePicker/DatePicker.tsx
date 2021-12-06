@@ -13,9 +13,10 @@ const DatePicker = () => {
   const changeDateHandler = (newDate: Date | null) => {
     setDate(newDate);
     const formattedDate = newDate
-      ? newDate?.getDate() +
+      ? newDate?.getMonth() +
+        1 +
         "." +
-        (newDate?.getMonth() + 1) +
+        newDate?.getDate() +
         "." +
         newDate?.getFullYear()
       : null;
@@ -26,7 +27,7 @@ const DatePicker = () => {
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DesktopDatePicker
         label="Select date"
-        inputFormat="dd/MM/yyyy"
+        inputFormat="MM/dd/yyyy"
         value={date}
         onChange={changeDateHandler}
         renderInput={(params) => (

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const today: Date = new Date();
 const formattedDate =
-  today.getDate() + "." + (today.getMonth() + 1) + "." + today.getFullYear();
+  today.getMonth() + 1 + "." + today.getDate() + "." + today.getFullYear();
 
 const dateSlice = createSlice({
   name: "dateSlice",

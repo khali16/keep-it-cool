@@ -19,7 +19,7 @@ const FluidIncreaseButton: React.FC<Props> = ({
 
   useEffect(() => {
     dispatch(fetchMeasurement());
-  }, []);
+  }, [dispatch]);
 
   const { handleSubmitHandler } = useMeasurementSubmit({
     increaseFluidLevel,

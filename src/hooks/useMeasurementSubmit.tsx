@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store";
 import { updateMeasurement, fetchMeasurement } from "../store/express-slice";
