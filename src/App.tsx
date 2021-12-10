@@ -5,8 +5,8 @@ import FluidStatistics from "./components/FluidsStatistics/FluidStatistics";
 const App = () => {
   return (
     <>
-      <AllMeasurementsPanel />
       <DatePicker />
+      <AllMeasurementsPanel />
       <FluidStatistics />
     </>
   );

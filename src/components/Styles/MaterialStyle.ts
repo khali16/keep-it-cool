@@ -9,4 +9,8 @@ export const useStyles = makeStyles({
     left: "44%",
     top: 20,
   },
+  datePicker: {
+    marginTop: "30px",
+    marginLeft: "5%",
+  },
 });
