@@ -1,18 +1,16 @@
 import styles from "./CupOfWater.module.css";
-import useCounter from "../../../hooks/useCounter";
 import FluidIncreaseButton from "../FluidIncreaseButton";
+import useCupMeasurement from "../../../hooks/useCupMeasurement";
 
 const CupOfWater = () => {
-  const waterFluidCounter = useCounter(0);
-
-  const jeden =
-    styles["cupStage".concat(waterFluidCounter.fluidCounter.toString())];
+  const { cupMeasurement, MeasurementStyles, FluidIncreaseHandler } =
+    useCupMeasurement("Water", styles);
   return (
     <>
-      <div className={jeden}></div>
+      <div className={MeasurementStyles}></div>
       <FluidIncreaseButton
-        increaseFluidLevel={waterFluidCounter.increaseFluidCounterHandler}
-        fluidCounter={waterFluidCounter.fluidCounter}
+        increaseFluidLevel={FluidIncreaseHandler}
+        fluidCounter={cupMeasurement || 0}
         fluidType="Water"
         maxCups={5}
       />

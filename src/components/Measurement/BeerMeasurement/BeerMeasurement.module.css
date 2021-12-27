@@ -1,6 +1,6 @@
-.glassStage0,
-.glassStage1,
-.glassStage2 {
+.cupStage0,
+.cupStage1,
+.cupStage2 {
   margin-left: 40%;
   margin-top: 49%;
   transform: translate(-50%, -50%);
@@ -11,9 +11,9 @@
   border-radius: 0 0 30px 30px;
   box-shadow: 0 0 0 6px #666666, 0 10px 25px rgba(0, 0, 0, 1);
 }
-.glassStage0:before,
-.glassStage1:before,
-.glassStage2:before {
+.cupStage0:before,
+.cupStage1:before,
+.cupStage2:before {
   content: "";
   position: absolute;
   width: 50px;
@@ -24,15 +24,15 @@
   border-top-right-radius: 35px;
   border-bottom-right-radius: 35px;
 }
-.glassStage1 {
+.cupStage1 {
   animation: firstFill 2s linear;
 }
-.glassStage2 {
+.cupStage2 {
   animation: secondFill 2s linear;
 }
 
-.glassStage1,
-.glassStage2 {
+.cupStage1,
+.cupStage2 {
   animation-fill-mode: forwards;
   background: url("../../../Images/beer.png");
   background-size: cover;
